@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Блог</title>
+</head>
+<body>
+    <h1>Добро пожаловать в блог</h1>
+    
+    <div id="auth">
+        <h2>Регистрация / Вход</h2>
+        <input type="text" id="username" placeholder="Имя пользователя">
+        <input type="password" id="password" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+        <button onclick="register()">Регистрация</button>
+    </div>
+
+    <div id="subscription">
+        <h2>Подписка на пользователя</h2>
+        <input type="text" id="subscribedUserId" placeholder="ID пользователя для подписки">
+        <button onclick="subscribe()">Подписаться</button>
+    </div>
+
+    <div id="post-form">
+        <h2>Написать пост</h2>
+        <textarea id="post-content" placeholder="Ваш пост..."></textarea>
+        <input type="text" id="tags" placeholder="Теги (через запятую)">
+        <label>
+            Скрытый пост:
+            <input type="checkbox" id="hidden-post">
+        </label>
+        <button onclick="createPost()">Опубликовать</button>
+    </div>
+
+    <div id="posts">
+        <h2>Посты</h2>
+        <input type="text" id="tag-filter" placeholder="Фильтр по тегам">
+        <button onclick="loadPosts()">Фильтровать</button>
+        <div id="post-list"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

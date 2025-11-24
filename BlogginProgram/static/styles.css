@@ -1,0 +1,7 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#auth, #post-form, #posts {
+    margin: 20px;
+}
